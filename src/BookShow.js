@@ -13,6 +13,7 @@ const BookShow = ({ book, deleteBookById, editBookById }) => {
     }
 
     const handleSubmit = (id, title) => {
+        console.log("Edit book by it", id)
         editBookById(id, title)
         setShowEdit(false);
     }
@@ -26,6 +27,7 @@ const BookShow = ({ book, deleteBookById, editBookById }) => {
         <img src={`https://picsum.photos/seed/${book.id}/300/200`} alt="books" />
         {content}
         <div className="actions">
+            {book.id}
             <button className="edit" onClick={handleEditClick}>Edit</button>
             <button className="delete" onClick={handleDeleteClick}>Delete</button>
         </div>
